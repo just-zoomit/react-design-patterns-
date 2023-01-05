@@ -10,7 +10,15 @@ return <h1 style= {{ backgroundColor: 'red'}}> Right</h1>
 
 function App() {
   return (
-    <SplitScreen left={LeftHandComponent}  right={RightHandComponent}>  </SplitScreen>
+    <SplitScreen 
+        leftWeight= {1}
+        rightWeight= {3}> 
+        
+        <LeftHandComponent/>
+        <RightHandComponent/>
+   
+   </SplitScreen>  
+    
     
   );
 }
