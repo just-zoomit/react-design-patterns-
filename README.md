@@ -42,4 +42,4 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 
 [lil-course-url]: https://www.linkedin.com/learning/react-design-patterns
 [lil-thumbnail-url]: https://cdn.lynda.com/course/2895130/2895130-1632416406408-16x9.jpg
-[lil-thumbnail2-url]: https://imgur.com/a/ggk8Dgg.jpg](https://res.cloudinary.com/dri9loptm/image/upload/v1673017780/Screen_Shot_2022-11-22_at_7.37.15_PM_zf2eyn.png
+[lil-thumbnail2-url]: https://res.cloudinary.com/dri9loptm/image/upload/v1673017780/Screen_Shot_2022-11-22_at_7.37.15_PM_zf2eyn.png
