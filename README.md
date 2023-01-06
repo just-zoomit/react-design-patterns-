@@ -1,7 +1,7 @@
 # React: Design Patterns
 This is the repository for the LinkedIn Learning course React: Design Patterns. The full course is available from [LinkedIn Learning][lil-course-url].
 
-![React: Design Patterns][lil-thumbnail-url] 
+![React: Design Patterns][lil-thumbnail2-url] 
 
 If you’ve learned the basics of React and have worked on many React applications, chances are you’ve run into some recurring problems and situations, like creating reusable layouts or working with forms. If you’ve been on the hunt for solutions to common problems, look no further than this course with Shaun Wassell, where he covers many of the most useful design patterns—effective and repeatable solutions to common application development challenges. This course consists of several sections, each of which will cover a group of React design patterns, ranging from preferred syntax for specific tasks to how to arrange components in the most effective way. Among the topics Shaun covers are composition, higher-order components, state hoisting, controlled vs. uncontrolled components, and many other patterns that help a React app develop into a well-organized codebase.
 
@@ -42,4 +42,4 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 
 [lil-course-url]: https://www.linkedin.com/learning/react-design-patterns
 [lil-thumbnail-url]: https://cdn.lynda.com/course/2895130/2895130-1632416406408-16x9.jpg
-[lil-thumbnail2-url]: https://imgur.com/a/ggk8Dgg.jpg
+[lil-thumbnail2-url]: [https://imgur.com/a/ggk8Dgg.jpg](https://res.cloudinary.com/dri9loptm/image/upload/v1673017780/Screen_Shot_2022-11-22_at_7.37.15_PM_zf2eyn.png)
