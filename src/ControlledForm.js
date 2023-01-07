@@ -6,55 +6,75 @@ import {useState, useEffect} from "react";
 
 export const ControlledForm = () => {
     const [nameInputError, setNameInputError] = useState('');
-    const [name,setName] = useState('');
-    const [age, setAge]= useState('');
-    const [hairColorInput, sethairColorInput] = useState('');
-    
-    // Benefit of controlled form is that we can use the state to do things like validation
+    const initialFormData = {
+        name: '',
+        age: '',
+        hairColorInput: '',
+      };
+
+    const [formData, setFormData] = useState(initialFormData);
+    const { name, age, hairColorInput } = formData;
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((formData) => ({...formData,[name]: value}));
+      };
+
+    console.log("Name", name);
+    console.log("Age", age);
+    console.log("hairColor",hairColorInput);
+    console.log("Name", formData);
+
+    // Benefit of controlled form is that we can
+    // use the state to do things like validation
     useEffect(() => {
+        
         if (name.length < 2) {
+            
             setNameInputError("Name must be at least 2 characters");
+           
         }else {
             setNameInputError("");
         }
       
-    }, [name])
+    }, [name, age, hairColorInput])
     
 
     const handleSubmit = (event) => {
-        console.log(name.current.value);
-        console.log(age.current.value);
-        console.log(hairColorInput.current.value);
+      
         event.preventDefault();
+        //submit the form data to the server here
+
+        setFormData(initialFormData); // reset the form data to its initial 
 
     }
 
     return (
         
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
         {nameInputError && <p>{nameInputError}</p> }
         <input 
         type="text" 
         name="name" 
         placeholder="Name" 
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        value={formData.name}
+        onChange={handleChange}
         />
         <input 
         type="text" 
         name="age" 
         placeholder="Age" 
-        value={age} 
-        onChange={(e) => setAge(Number(e.target.value))}
+        value={formData.age} 
+        onChange={handleChange}
         />
         <input 
         type="text" 
         name="Hair Color" 
         placeholder="Hair Color" 
-        value={hairColorInput}
-        onChange={(e) => sethairColorInput(e.target.value)}
+        value={formData.hairColorInput}
+        onChange={handleChange}
         />
-        <button type="submit">Submit</button>
+        <button onClick={handleSubmit} type="submit">Submit</button>
         </form>
 
     )
