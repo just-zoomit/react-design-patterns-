@@ -36,8 +36,6 @@ function App() {
 
 		</DataSource>
 
-	
-
 		{/* Generic Resource pattern  */}
 		<ResourceLoader resourceURL="/users/123" resourceName="user">
 			<UserInfo />
