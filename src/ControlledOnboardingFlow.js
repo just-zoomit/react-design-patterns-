@@ -12,6 +12,7 @@ export const ControlledOnboardingFlow = ({ children, onFinish, currentIndex, onN
 
     if (React.isValidElement(currentChild)) {
         return React.cloneElement(currentChild, { goToNext});
+        //
     }
 
     return currentChild;
