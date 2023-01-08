@@ -3,34 +3,54 @@ import { useState } from "react";
 import { ControlledForm } from "./ControlledForm";
 import { ControlledModal } from './ControlledModal';
 import { UncontrolledOnboardingFlow } from "./UncontrolledOnboardingFlow";
+import { ControlledOnboardingFlow } from "./ControlledOnboardingFlow";
 
 
 import { UncontrolledForm } from "./UncontrolledForm";
 import {UncontrolledModal} from "./UncontrolledModal";
 
+const StepOne = ({goToNext}) => (
+	<>
+	<h1>Step One</h1>
+	<button onClick={() => goToNext({name: "John Doe"})}> Next</button>
+	</>
+);
+
+const StepTwo = ({goToNext}) => (
+	<>
+	<h1>Step Two</h1>
+	<button onClick={() => goToNext({age: "50"})}> Next</button>
+	</>
+);
+
+const StepThree = ({goToNext}) => (
+	<>
+	<h1>Step Three</h1>
+	<p> Congratulations! You qualify for our senior discount </p>
+	<button onClick={() => goToNext({})}> Next </button>
+	</>
+);
+
+const StepFour = ({goToNext}) => (
+	<>
+	<h1>Step Four</h1>
+	<button onClick={() => goToNext({hairColor: "Gray"})}>Next</button>
+	</>
+);
+
+
+
 function App() {
+	const [onboardingData, setOnboardingData] = useState({});
+    const [currentIndex, setCurrentIndex] = useState(0);
+
 	const [showModal, setShowModal] = useState(false);
 
-	const StepOne = ({goToNext}) => (
-		<>
-		<h1>Step One</h1>
-		<button onClick={() => goToNext({name: "John Doe"})}> Next</button>
-		</>
-	);
+	const onNext = stepData => {
 
-	const StepTwo = ({goToNext}) => (
-		<>
-		<h1>Step Two</h1>
-		<button onClick={() => goToNext({age: "100"})}>Next</button>
-		</>
-	);
-
-	const StepThree = ({goToNext}) => (
-		<>
-		<h1>Step Three</h1>
-		<button onClick={() => goToNext({hairColor: "Gray"})}>Next</button>
-		</>
-	);
+        setOnboardingData({...onboardingData, ...stepData});
+		setCurrentIndex(currentIndex + 1);
+    };
 
 	return (
 		<>
@@ -38,15 +58,21 @@ function App() {
 
 		{/* Note the props have to match those defined in Controlled Modal JS */}
 	
-		<UncontrolledOnboardingFlow onFinish={ data => {
-		console.log(data)
-		alert("Onboarding Complete");
-
-		}}>
+		<ControlledOnboardingFlow
+		// onFinish= {
+		// 	data => {
+		// 	console.log("Data ", data)
+		// 	alert("Onboarding Complete")
+		// }}
+		currentIndex={currentIndex}
+		onNext={onNext}
+		>
 		<StepOne/>
 		<StepTwo/>
-		<StepThree/>
-		</UncontrolledOnboardingFlow>
+		
+		{ onboardingData.age >= 62 && <StepThree/>}
+		<StepFour/>
+		</ControlledOnboardingFlow>
 
 	
 
