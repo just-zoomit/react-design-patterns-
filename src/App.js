@@ -4,7 +4,9 @@ function App() {
 	return (
 		<>
 		<h1>Your code goes here </h1>
-		<UserInfo />
+		<UserInfo userId="123"/>
+		<UserInfo userId="234"/>
+		<UserInfo userId="345"/>
 		</>
 	);
 }

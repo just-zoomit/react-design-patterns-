@@ -1,7 +1,9 @@
 import { useCurrentUser } from "./useCurrentUser";
+import { useUser } from "./useUser";
 
-export const UserInfo = () => {
-	const user = useCurrentUser();
+export const UserInfo = ({userId}) => {
+	const user = useUser(userId);
+	
 	const { name, age, hairColor, hobbies } = user || {};
 
 	return user ? (
