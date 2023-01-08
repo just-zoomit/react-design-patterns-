@@ -5,6 +5,7 @@ export const ControlledOnboardingFlow = ({ children, onFinish, currentIndex, onN
     const goToNext = stepData => {
         onNext(stepData);
     };
+    //
      
    
     const currentChild = React.Children.toArray(children)[currentIndex];
