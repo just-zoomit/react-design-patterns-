@@ -1,4 +1,5 @@
 import { UserInfo } from "./UserInfo";
+import { ProductInfo } from "./ProductInfo";
 
 function App() {
 	return (
@@ -7,6 +8,8 @@ function App() {
 		<UserInfo userId="123"/>
 		<UserInfo userId="234"/>
 		<UserInfo userId="345"/>
+		<h2> ProductInfo </h2>
+		<ProductInfo productId='1234'/>
 		</>
 	);
 }
